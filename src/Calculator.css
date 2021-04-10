@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.calculator-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  height: 55%;
+  padding: 0.3rem;
+  border: 1px solid gray;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left top, right top, from(#e7e5e5), color-stop(#c4bfbf), to(#f0eeee));
+  background: linear-gradient(to right, #e7e5e5, #c4bfbf, #f0eeee);
+  -webkit-box-shadow: 4px 4px 13px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 13px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1000px) {
+  .calculator-body {
+    width: 53%;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calculator-body {
+    width: 95%;
+    height: 70%;
+  }
+}
+
+.calculator-display {
+  width: 98%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.2rem;
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: #a4a999;
+  -webkit-box-shadow: inset 1px 1px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 1px 1px rgba(0, 0, 0, 0.4);
+  font-family: 'Orbitron', sans-serif;
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 1.7em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.calculator-buttons {
+  display: -ms-grid;
+  display: grid;
+  /*align-items: center;*/
+  justify-items: center;
+  gap: 5px;
+  /*background-color: white;*/
+      grid-template-areas: 'ac ac div mul' 'seven eight nine sub' 'four five six add'  'one two three equal' 'zero zero decimal equal';
+  width: 98%;
+  height: 83%;
+  margin-bottom: 0.2rem;
+}
+
+.calc-button {
+  all: unset;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*border: 1px solid gray;*/
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.ac-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ac;
+  background-color: #ff3460;
+  -webkit-box-shadow: 2px 2px #be062e;
+          box-shadow: 2px 2px #be062e;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.ac-button:hover {
+  background-color: #f71d4c;
+}
+
+.ac-button:active {
+  -webkit-box-shadow: 1px 1px #be062e;
+          box-shadow: 1px 1px #be062e;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.div-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: div;
+  background-color: #8a8585;
+  -webkit-box-shadow: 2px 2px #4e4d4d;
+          box-shadow: 2px 2px #4e4d4d;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.div-button:hover {
+  background-color: #6e6b6b;
+}
+
+.div-button:active {
+  -webkit-box-shadow: 1px 1px #4e4d4d;
+          box-shadow: 1px 1px #4e4d4d;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.mul-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: mul;
+  background-color: #8a8585;
+  -webkit-box-shadow: 2px 2px #4e4d4d;
+          box-shadow: 2px 2px #4e4d4d;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.mul-button:hover {
+  background-color: #6e6b6b;
+}
+
+.mul-button:active {
+  -webkit-box-shadow: 1px 1px #4e4d4d;
+          box-shadow: 1px 1px #4e4d4d;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.sub-button {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: sub;
+  background-color: #8a8585;
+  -webkit-box-shadow: 2px 2px #4e4d4d;
+          box-shadow: 2px 2px #4e4d4d;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.sub-button:hover {
+  background-color: #6e6b6b;
+}
+
+.sub-button:active {
+  -webkit-box-shadow: 1px 1px #4e4d4d;
+          box-shadow: 1px 1px #4e4d4d;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.add-button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: add;
+  background-color: #8a8585;
+  -webkit-box-shadow: 2px 2px #4e4d4d;
+          box-shadow: 2px 2px #4e4d4d;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #6e6b6b;
+}
+
+.add-button:active {
+  -webkit-box-shadow: 1px 1px #4e4d4d;
+          box-shadow: 1px 1px #4e4d4d;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.equal-button {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: equal;
+  background-color: #5c46db;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px #2611a0;
+          box-shadow: 2px 2px #2611a0;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.equal-button:hover {
+  background-color: #4022e9;
+}
+
+.equal-button:active {
+  -webkit-box-shadow: 1px 1px #2611a0;
+          box-shadow: 1px 1px #2611a0;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.decimal-button {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: decimal;
+  background-color: #8a8585;
+  -webkit-box-shadow: 2px 2px #4e4d4d;
+          box-shadow: 2px 2px #4e4d4d;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.decimal-button:hover {
+  background-color: #6e6b6b;
+}
+
+.decimal-button:active {
+  -webkit-box-shadow: 1px 1px #4e4d4d;
+          box-shadow: 1px 1px #4e4d4d;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.one {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: one;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.one:hover {
+  background-color: #a39c9c;
+}
+
+.one:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.two {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: two;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.two:hover {
+  background-color: #a39c9c;
+}
+
+.two:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.three {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: three;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.three:hover {
+  background-color: #a39c9c;
+}
+
+.three:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.four {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: four;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.four:hover {
+  background-color: #a39c9c;
+}
+
+.four:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.five {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: five;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.five:hover {
+  background-color: #a39c9c;
+}
+
+.five:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.six {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: six;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.six:hover {
+  background-color: #a39c9c;
+}
+
+.six:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.seven {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: seven;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.seven:hover {
+  background-color: #a39c9c;
+}
+
+.seven:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.eight {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: eight;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.eight:hover {
+  background-color: #a39c9c;
+}
+
+.eight:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.nine {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: nine;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.nine:hover {
+  background-color: #a39c9c;
+}
+
+.nine:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+
+.zero {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zero;
+  background-color: #b9b1b1;
+  -webkit-box-shadow: 2px 2px #6e6b6b;
+          box-shadow: 2px 2px #6e6b6b;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.zero:hover {
+  background-color: #a39c9c;
+}
+
+.zero:active {
+  -webkit-box-shadow: 1px 1px #6e6b6b;
+          box-shadow: 1px 1px #6e6b6b;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+/*# sourceMappingURL=Calculator.css.map */

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+@mixin dark-gray-button {
+    background-color: rgb(138, 133, 133);
+    box-shadow: 2px 2px rgb(78, 77, 77);
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgb(110, 107, 107);
+    }
+
+    &:active {
+        box-shadow: 1px 1px rgb(78, 77, 77);
+        transform: translate(1px,1px);
+    }
+}
+
+@mixin light-gray-button {
+    background-color: rgb(185, 177, 177);
+    box-shadow: 2px 2px rgb(110, 107, 107);
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgb(163, 156, 156);
+    }
+
+    &:active {
+        box-shadow: 1px 1px rgb(110, 107, 107);
+        transform: translate(1px,1px);
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width : 100vw;
+    height: 100vh;
+}
+
+.calculator-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height : 55%;
+    padding: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background : linear-gradient(to right,rgb(231, 229, 229),rgb(196, 191, 191),rgb(240, 238, 238));
+    box-shadow : 4px 4px 13px 3px rgba(0,0,0,0.3);
+
+    @media screen and (max-width: 1000px) {
+        width: 53%;
+        height : 70%;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 95%;
+        height : 70%;
+    }
+}
+
+.calculator-display {
+    width: 98%;
+    height: 15%;
+    display: flex;
+    margin-bottom: 0.2rem;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: rgb(164,169,153);
+    box-shadow: inset 1px 1px rgba(0,0,0,0.4);
+    font-family: 'Orbitron', sans-serif;
+    text-align: right;
+    align-items:flex-end;
+    justify-content: flex-end;
+    font-size: 1.7em;
+    user-select: none;
+}
+
+.calculator-buttons {
+    display: grid;
+    /*align-items: center;*/
+    justify-items: center;
+    gap: 5px;
+    /*background-color: white;*/
+    grid-template-areas : 
+        'ac ac div mul'
+        'seven eight nine sub'
+        'four five six add' 
+        'one two three equal'
+        'zero zero decimal equal';
+    width : 98%;
+    height: 83%;
+    margin-bottom: 0.2rem;
+}
+
+.calc-button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px solid gray;*/
+    width : 100%;
+    height : 100%;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.ac-button {
+    grid-area: ac;
+    background-color: rgb(255, 52, 96);
+    box-shadow: 2px 2px rgb(190, 6, 46);
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(247, 29, 76);
+    }
+
+    &:active {
+        box-shadow: 1px 1px rgb(190, 6, 46);
+        transform: translate(1px,1px);
+    }
+}
+
+.div-button {
+    grid-area: div;
+    @include dark-gray-button;
+}
+
+.mul-button {
+    grid-area: mul;
+    @include dark-gray-button;
+}
+
+.sub-button {
+    grid-area : sub;
+    @include dark-gray-button;
+}
+
+.add-button {
+    grid-area: add;
+    @include dark-gray-button;
+}
+
+.equal-button {
+    grid-area: equal;
+    background-color: rgb(92, 70, 219);
+    border-radius: 2px;
+    box-shadow: 2px 2px rgb(38, 17, 160);
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(64, 34, 233);
+    }
+
+    &:active {
+        box-shadow: 1px 1px rgb(38, 17, 160);
+        transform: translate(1px,1px);
+    }
+}
+
+.decimal-button {
+    grid-area: decimal;
+    @include dark-gray-button;
+}
+
+.one {
+    grid-area : one;
+    @include light-gray-button;
+}
+.two {
+    grid-area : two;
+    @include light-gray-button;
+}
+.three {
+    grid-area : three;
+    @include light-gray-button;
+}
+.four {
+    grid-area : four;
+    @include light-gray-button;
+}
+.five {
+    grid-area : five;
+    @include light-gray-button;
+}
+.six {
+    grid-area : six;
+    @include light-gray-button;
+}
+.seven {
+    grid-area : seven;
+    @include light-gray-button;
+}
+.eight {
+    grid-area : eight;
+    @include light-gray-button;
+}
+.nine {
+    grid-area : nine;
+    @include light-gray-button;
+}
+.zero {
+    grid-area : zero;
+    @include light-gray-button;
+}
